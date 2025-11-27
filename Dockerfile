@@ -13,5 +13,9 @@ RUN dotnet publish -c Release -o /app/publish
 # 3️⃣ Final image
 FROM base AS final
 WORKDIR /app
+
+# ⭐ IMPORTANT: This allows Render environment variables to reach ASP.NET
+ENV Groq__ApiKey=${Groq__ApiKey}
+
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "ChatBotMVC.dll"]
