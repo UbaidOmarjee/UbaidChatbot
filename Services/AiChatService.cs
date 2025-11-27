@@ -12,7 +12,8 @@ namespace ChatBotMVC.Services
 
         public AiChatService(IConfiguration config)
         {
-            _apiKey = config["Groq:ApiKey"];
+            _apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY");
+
             _http = new HttpClient();
         }
 
