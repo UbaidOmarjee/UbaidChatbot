@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "VX/Z9V/42wQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\uomar\\source\\repos\\ChatBotMVC\\ChatBotMVC\\ChatBotMVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\uomar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\uomar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.3\\microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512",
+    "C:\\Users\\uomar\\.nuget\\packages\\openai\\2.7.0\\openai.2.7.0.nupkg.sha512",
+    "C:\\Users\\uomar\\.nuget\\packages\\system.clientmodel\\1.8.1\\system.clientmodel.1.8.1.nupkg.sha512",
+    "C:\\Users\\uomar\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
+    "C:\\Users\\uomar\\.nuget\\packages\\system.net.serversentevents\\9.0.9\\system.net.serversentevents.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
