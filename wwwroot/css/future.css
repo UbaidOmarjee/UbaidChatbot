@@ -1,0 +1,125 @@
+﻿body {
+    margin: 0;
+    background: #000;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 550px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #0a84ff44;
+    border-right: 1px solid #0a84ff44;
+    background: #020202;
+    box-shadow: 0 0 30px #0a84ff22;
+}
+
+.header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #0a84ff55;
+    background: linear-gradient(to right, #001428, #001d3a);
+    box-shadow: 0 0 20px #0a84ff55;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #0a84ff;
+}
+
+.chat-window {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #030303;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bubble {
+    padding: 12px 18px;
+    max-width: 75%;
+    border-radius: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+    .bubble.user {
+        margin-left: auto;
+        background: #0a84ff;
+        color: #fff;
+        box-shadow: 0 0 12px #0a84ff88;
+        border-bottom-right-radius: 5px;
+    }
+
+    .bubble.bot {
+        background: #111;
+        color: #0a84ff;
+        border: 1px solid #0a84ff55;
+        box-shadow: 0 0 10px #0a84ff33;
+        border-bottom-left-radius: 5px;
+    }
+
+.input-bar {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #0a84ff55;
+    background: #050505;
+    gap: 10px;
+}
+
+    .input-bar input {
+        flex: 1;
+        padding: 14px 18px;
+        border-radius: 25px;
+        border: 1px solid #0a84ff44;
+        background: #0a0a0a;
+        color: #0a84ff;
+        outline: none;
+        font-size: 15px;
+        box-shadow: 0 0 12px #0a84ff22 inset;
+    }
+
+        .input-bar input::placeholder {
+            color: #0a84ff66;
+        }
+
+    .input-bar button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        background: #0a84ff;
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        box-shadow: 0 0 15px #0a84ffaa;
+        transition: 0.2s;
+    }
+
+        .input-bar button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #0a84ffdd;
+        }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
