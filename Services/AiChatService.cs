@@ -7,12 +7,12 @@ namespace ChatBotMVC.Services
 {
     public class AiChatService
     {
-        private readonly string _apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY");
+        private readonly string _apiKey;
         private readonly HttpClient _http;
 
         public AiChatService(IConfiguration config)
         {
-            _apiKey = config["Groq:ApiKey"];
+            _apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY");
             _http = new HttpClient();
         }
 
