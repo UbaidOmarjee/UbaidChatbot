@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ChatBot</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ChatBotMVC.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="main-container">
+
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <a href="/Chat/Index" class="new-chat-btn">+ New Chat</a>
+            </div>
+
+            <div class="sidebar-chats">
+                <div class="chat-item"></div>
+                <div class="chat-item"></div>
+                <div class="chat-item"></div>
+            </div>
+        </div>
+
+        <!-- MAIN CHAT AREA -->
+        <div class="content">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <!-- scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

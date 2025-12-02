@@ -1,0 +1,91 @@
+﻿@model ChatMessage
+
+<link rel="stylesheet" href="~/css/polytheme.css" />
+
+<div class="chat-wrapper" style="height:100vh;">
+
+
+    <div class="header">
+        <div class="header-title">ChatBot</div>
+        <img src="/images/robot-icon.jpg" class="header-avatar" />
+        <button class="theme-btn" onclick="switchTheme()">Change Theme</button>
+
+    </div>
+
+    <div id="chatWindow" class="chat-window" style="height: 450px; overflow-y: auto;">
+        @if (Model.ChatHistory != null)
+        {
+            foreach (var msg in Model.ChatHistory)
+            {
+                @if (msg.IsUser)
+                {
+                    <div class="message-row user-row user-anim">
+                        <div class="spacer"></div>
+                        <div class="bubble user">@msg.Message</div>
+                        <img src="/images/user-icon.png" class="avatar" />
+                    </div>
+                }
+                else
+                {
+                    <div class="message-row bot-row bot-anim">
+                        <img src="/images/robot-icon.jpg" class="avatar" /> 
+                        <div class="bubble bot">@msg.Message</div>
+                        <div class="spacer"></div>
+                    </div>
+                }
+
+            }
+        }
+    </div>
+
+    <form method="post" class="input-area">
+
+        @for (int i = 0; i < Model.ChatHistory.Count; i++)
+        {
+            <input type="hidden" name="ChatHistory[@i].Message" value="@Model.ChatHistory[i].Message" />
+            <input type="hidden" name="ChatHistory[@i].IsUser" value="@Model.ChatHistory[i].IsUser" />
+        }
+
+        <input type="text" name="UserMessage" placeholder="Ask anything..." required />
+
+        <button type="submit" class="send-btn">
+            <i>➤</i>
+        </button>
+    </form>
+
+</div>
+
+<script>
+    window.onload = () => {
+        const chatWindow = document.getElementById("chatWindow");
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    };
+</script>
+
+<script>
+    function switchTheme() {
+        const body = document.body;
+
+        // Cycle through themes
+        if (body.classList.contains("neon-theme")) {
+            body.classList.remove("neon-theme");
+            body.classList.add("dark-theme");
+            localStorage.setItem("theme", "dark");
+        }
+        else if (body.classList.contains("dark-theme")) {
+            body.classList.remove("dark-theme");
+            localStorage.setItem("theme", "default");
+        }
+        else {
+            body.classList.add("neon-theme");
+            localStorage.setItem("theme", "neon");
+        }
+    }
+
+    // Load saved theme on refresh
+    window.onload = () => {
+        const theme = localStorage.getItem("theme");
+        if (theme === "neon") document.body.classList.add("neon-theme");
+        if (theme === "dark") document.body.classList.add("dark-theme");
+    };
+</script>
