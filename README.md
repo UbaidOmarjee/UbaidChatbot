@@ -9,7 +9,7 @@ It demonstrates:
 
 - Full-stack ASP.NET Core MVC development  
 - Integration with real AI models through the **Groq API**  
-- Custom UI/UX with multiple themes (Dark, Light, Neon, Future Blue)  
+- Custom UI/UX with multiple themes (Dark, Light, Neon)  
 - Modern chat animations and message flow  
 - Mobile-responsive design  
 - Conversation memory support  
@@ -23,7 +23,7 @@ Although lightweight, the project showcases practical skills needed to build rea
 
 ### 💬 **AI Messaging System**
 - Send messages to the chatbot and receive intelligent responses.
-- Uses **Groq’s `gpt-oss-120b` model** (free + fast).
+- Uses **Groq’s model** (free + fast).
 - Supports **conversation history context**.
 
 ### 🎨 **Elegant Custom UI**
@@ -108,9 +108,8 @@ Potential extensions include:
 
 ## 👤 Author
 **Ubaid Omarjee**  
-AI Developer • ASP.NET Full-Stack Developer  
-(Replace with your preferred details or links)
-
+ ASP.NET Full-Stack Developer
+ 
 ---
 
 ## 📌 License
