@@ -474,3 +474,84 @@ body {
     overflow-y: auto;
     position: relative;
 }
+
+/* ============================= */
+/* MOBILE RESPONSIVE FIXES       */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Chat wrapper full height */
+    .chat-wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Header adjusts for small screens */
+    .header {
+        padding: 10px;
+        height: 60px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    /* Chat window uses available space */
+    .chat-window {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    /* Message bubbles scale properly */
+    .bubble {
+        max-width: 85%;
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+    /* User side spacing */
+    .message-row.user-row .bubble {
+        margin-right: 5px;
+    }
+
+    .message-row.bot-row .bubble {
+        margin-left: 5px;
+    }
+
+    /* FIX: Input area no longer huge */
+    .input-area {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        background: #0d0d1a;
+        border-top: 1px solid #222;
+        height: auto;
+    }
+
+        .input-area input[type="text"] {
+            flex: 1;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+    .send-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
+
+/* Extra small phones (iPhone SE, Android mini) */
+@media (max-width: 430px) {
+    .bubble {
+        max-width: 90%;
+        font-size: 14px;
+    }
+}
